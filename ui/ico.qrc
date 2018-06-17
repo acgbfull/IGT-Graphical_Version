@@ -1,0 +1,8 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource>
+    <file>.\images\g.ico</file>
+    <file>.\images\g.png</file>
+    <file>.\images\g2.jpg</file>
+</qresource>
+</RCC>
