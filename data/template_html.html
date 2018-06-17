@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Information Gathering Tool Report</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+function showhide(id) {
+    obj = document.getElementById(id);
+    hide = document.getElementById("hide-" + id);
+    show = document.getElementById("show-" + id);
+    if (obj.style.display == "none") {
+        show.removeAttribute('style');
+        hide.removeAttribute('style');
+        obj.removeAttribute('style');
+    } else {
+        obj.style.display = "none";
+        hide.style.display = "none";
+        show.style.display = "inline";
+    }
+    
+    for (i = 1; i < 3; ++i) {
+        obj = document.getElementById( id + "-" + i);
+        if (obj.style.display == "none") {
+            obj.removeAttribute('style');
+        } else {
+            obj.style.display = "none";
+        }
+    }
+}
+function showhide1(id) {
+    obj = document.getElementById(id);
+    hide = document.getElementById("hide-" + id);
+    show = document.getElementById("show-" + id);
+    if (obj.style.display == "none") {
+        show.removeAttribute('style');
+        hide.removeAttribute('style');
+        obj.removeAttribute('style');
+    } else {
+        obj.style.display = "none";
+        hide.style.display = "none";
+        show.style.display = "inline";
+    }
+}
+function showhide2(id) {
+    obj = document.getElementById(id);
+    if (obj.style.display == "none") {
+        obj.removeAttribute('style');
+    } else {
+        obj.style.display = "none";
+    }
+}
+function start() {
+    tables = document.getElementsByName("table");
+    for (i = 0; i < tables.length; ++i) {
+        showhide1(tables[i].id);
+    }
+    tables = document.getElementsByName("table-1");
+    for (i = 0; i < tables.length; ++i) {
+        showhide2(tables[i].id);
+    }
+    tables = document.getElementsByName("table-2");
+    for (i = 0; i < tables.length; ++i) {
+        showhide2(tables[i].id);
+    }
+}
+</script>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75em;
+}
+.main {
+    width: 1500px;
+    padding: 0 10px;
+    /*text-align: center;*//*centers all the elements on the page*/
+    display: table;
+    margin: 0 auto;
+    border: 2px solid gray;
+    position: relative;
+}
+.title {
+    font-size: 3em;
+}
+.subtitle {
+    font-size: 2em;
+}
+.link {
+    font-size: 1em;
+    position: absolute;
+    right: 12px;
+    top: 5px;
+}
+p {
+    margin: 5px 7px 5px 7px;
+}
+table, div {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.container {
+    display:inline-block;
+    text-align: left; /*left justifies the table caption*/
+    border: 2px solid gray;
+    margin: 0 0 10px 0;
+    width: 100%%; /*expands tables all the way across*/
+}
+table {
+    border-spacing: 10px 5px;
+    margin: -5px auto 5px auto;
+    text-align: left;
+}
+th {
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+.leak {
+    margin: 10px 0;
+}
+a[id*="-"] {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+a[id*="show-"] {
+    display: none;
+}
+.footer {
+    text-align: center;
+}
+.centered {
+    text-align: center;
+}
+</style>
+</head>
+<body onload="start();">
+    <div class="main">
+        <div class='subtitle'>Information Gathering Tool Report</div>
+        <hr>
+        <div>
+<!-- START -->
+%s
+<!-- END -->
+        </div>
+        <hr>
+        <p class="footer">%s</p>
+    </div>
+</body>
+</html>
